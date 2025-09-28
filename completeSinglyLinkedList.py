@@ -48,13 +48,42 @@ class LinkedList:
             current = current.next
         print("None")
 
+
+    def delete_at_beginning(self):
+        if self.head is None:
+            print("Deletion Failed: List is empty")
+            return
+        self.head = self.head.next
+
+    def delete_at_end(self):
+        if self.head is None:
+            print("Deletion Failed: List is empty")
+            return
+        current = self.head
+
+        while current.next.next:
+            current = current.next
+        current.next = None
+
+    def delete_by_data(self,target):
+        current = self.head
+        prev = None
+        while current and current.data != target:
+            prev = current
+            current = current.next
+        prev.next = current.next
+
+        current.next = None
+        
+
     
 
 my_list = LinkedList()
 
-my_list.insert_at_beginning(20)
-my_list.insert_at_end(10)
-my_list.insert_after_data(20,30)
-
+my_list.insert_at_beginning(60)
+my_list.insert_at_end(50)
+my_list.insert_after_data(60,30)
+# my_list.delete_at_beginning()
+# my_list.delete_by_data(30)
 
 my_list.display()
