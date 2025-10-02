@@ -73,7 +73,6 @@ class LinkedList:
             current = current.next
         prev.next = current.next
 
-        current.next = None
         
 
     
@@ -84,6 +83,6 @@ my_list.insert_at_beginning(60)
 my_list.insert_at_end(50)
 my_list.insert_after_data(60,30)
 # my_list.delete_at_beginning()
-# my_list.delete_by_data(30)
+my_list.delete_by_data(30)
 
 my_list.display()
