@@ -61,6 +61,10 @@ class LinkedList:
             return
         current = self.head
 
+        if self.head.next is None:
+            self.head = None
+            return
+
         while current.next.next:
             current = current.next
         current.next = None

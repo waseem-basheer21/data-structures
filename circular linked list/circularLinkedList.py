@@ -90,6 +90,7 @@ class Circular_linked_list:
         # if only one node is present
         if self.head == self.head.next:
             self.head = None
+            return
         
         last = self.head
 
